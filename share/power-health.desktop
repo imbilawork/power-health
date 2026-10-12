@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Power & Battery Health
+GenericName=Battery Health
+Comment=Battery wear, live power draw, thermals and power profiles
+Exec=power-health gui
+Icon=battery
+Terminal=false
+Categories=System;Monitor;Settings;HardwareSettings;
+Keywords=battery;power;health;watts;charge;cycles;wear;thermal;profile;
+StartupNotify=true
+StartupWMClass=org.omarchy.PowerHealth

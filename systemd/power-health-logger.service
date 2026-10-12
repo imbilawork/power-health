@@ -1,0 +1,10 @@
+[Unit]
+Description=Sample battery and power state for power-health
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/power-health log
+# This exists only to append one line; it should never compete with anything.
+Nice=19
+IOSchedulingClass=idle

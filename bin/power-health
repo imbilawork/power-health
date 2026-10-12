@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Launcher for the power-health app. Keeps the source tree out of PYTHONPATH
+# for everything else on the system.
+set -euo pipefail
+# Resolve the source tree from this script's own location, so the repo runs
+# in place. install.sh rewrites this line with an absolute path for the
+# copy it puts in ~/.local/bin, which cannot find the tree that way.
+APP_ROOT="${POWER_HEALTH_ROOT:-$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)}"
+exec python3 -P -c '
+import sys
+sys.path.insert(0, sys.argv.pop(1))
+from powerhealth.cli import main
+sys.exit(main())
+' "$APP_ROOT" "$@"

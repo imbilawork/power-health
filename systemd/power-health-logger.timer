@@ -1,0 +1,14 @@
+[Unit]
+Description=Sample battery and power state every 10 minutes
+
+[Timer]
+OnStartupSec=2min
+OnUnitActiveSec=10min
+# A minute of slack lets systemd batch this with other timers instead of
+# waking the machine on its own account.
+AccuracySec=1min
+# Catch up after a suspend or a logged-out stretch so trends keep their shape.
+Persistent=true
+
+[Install]
+WantedBy=timers.target
