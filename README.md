@@ -87,10 +87,10 @@ power-health trend --csv        # the raw log
 
 ## Install
 
-From the AUR:
+As a pacman package, from the latest release:
 
 ```bash
-yay -S power-health
+sudo pacman -U https://github.com/imbilawork/power-health/releases/download/v1.0.0/power-health-1.0.0-1-any.pkg.tar.zst
 systemctl --user enable --now power-health-logger.timer
 ```
 
