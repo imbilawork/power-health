@@ -87,6 +87,15 @@ power-health trend --csv        # the raw log
 
 ## Install
 
+From the AUR:
+
+```bash
+yay -S power-health
+systemctl --user enable --now power-health-logger.timer
+```
+
+Or from a checkout, for the current user only:
+
 ```bash
 ./install.sh             # user-only: ~/.local/bin, ~/.config/systemd/user
 ./install.sh --uninstall # leaves the sample log alone
@@ -111,3 +120,7 @@ powerhealth/cli.py       argument parsing and subcommands
 
 `probe.py` degrades to `None` rather than raising, everywhere — a missing sysfs
 file is normal across machines, not an error.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
